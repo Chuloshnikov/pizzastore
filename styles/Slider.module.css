@@ -1,5 +1,6 @@
 .container {
     height: calc(100vh - 100px);
+    margin-top: 6.25rem;
     background-image: url("../public/images/background1.jpg");
     background-repeat: repeat;
     overflow: hidden;

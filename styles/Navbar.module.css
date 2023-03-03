@@ -1,7 +1,7 @@
 .container {
     height: 6.25rem;
     padding: 0 50px;
-    background-color: #D92916;
+    background-color: #2B292A;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,7 +26,7 @@
 }
 
 .logo {
-    border: 2px dashed #ffffff;
+    border: 4px dashed #ffffff;
     border-radius: 50%;
 }
 

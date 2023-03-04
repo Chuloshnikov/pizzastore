@@ -86,3 +86,43 @@
     font-weight: bold;
     color: #D92916;
 }
+
+@media screen and (max-width:1100px) {
+
+    .text:last-child {
+        font-size: 14px;
+    }
+
+
+}
+
+
+@media screen and (max-width:925px) {
+
+    .listItem {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .list img {
+        display: inline !important;
+    }
+
+    .item:nth-child(2) {
+        flex: 1;
+    }
+
+    .listItem {
+        display: none;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .item:nth-child(2) {
+        display: none;
+    }
+    .item:nth-child(1) {
+        flex: 3;
+    }
+}

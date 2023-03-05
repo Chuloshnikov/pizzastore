@@ -5,6 +5,7 @@ import Slider from './components/Slider';
 import PizzaList from './components/PizzaList';
 
 import { Roboto } from '@next/font/google';
+import axios from 'axios';
 
 
 const roboto = Roboto({
@@ -13,8 +14,7 @@ const roboto = Roboto({
   subsets: ['latin'],
 })
 
-
-export default function Home() {
+export default function Home({ pizzaList }) {
   return (
     <div className={roboto.className}>
       <Head>
@@ -24,7 +24,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slider/>
-      <PizzaList />
+      <PizzaList pizzaList={pizzaList}/>
     </div>
   )
+}
+
+export const  getServerSideProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/products");
+  return {
+    props: {
+      pizzaList: res.data,
+    }
+  }
 }

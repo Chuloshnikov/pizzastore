@@ -28,14 +28,24 @@
     color: #2B292A;
 }
 
-@media screen and (max-width: 480px) {
-    .container {
-        width: 100%;
-    }
-}
+
 
 @media screen and (max-width: 768px) {
     .container {
         width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .price {
+        font-size: 24px;
     }
 }

@@ -1,15 +1,22 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Slider from './components/Slider';
 import PizzaList from './components/PizzaList';
 
-const inter = Inter({ subsets: ['latin'] })
+import { Roboto } from '@next/font/google';
+
+
+const roboto = Roboto({
+  weight: ['400', '500', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+})
+
 
 export default function Home() {
   return (
-    <>
+    <div className={roboto.className}>
       <Head>
         <title>MCH Pizza</title>
         <meta name="description" content="Best pizza shop in this corner of the earch" />
@@ -18,7 +25,6 @@ export default function Home() {
       </Head>
       <Slider/>
       <PizzaList />
-
-    </>
+    </div>
   )
 }

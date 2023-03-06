@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/Cart.module.css';
 import Image from "next/image";
 
 import { useDispatch, useSelector } from 'react-redux';
 
-const Cart = () => {
+import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 
+const Cart = () => {
+    const [open, setOpen] = useState(false);
+    const [cash, setCash] = useState(false);
+    const amount = "2";
+    const currency = "USD";
+    const style = { layout: "vertical" };
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
-    console.log(cart);
+
+
 
   return (
     <div className={styles.container}>
@@ -75,7 +82,23 @@ const Cart = () => {
                 <div className={styles.totalText}>
                     <b className={styles.totalTextTitle}>Total:</b>${cart.total}
                 </div>
-                <button className={styles.button}>CHECKOUT NOW!</button>
+                { open ? (
+                    <PayPalScriptProvider
+                        options={{
+                        "client-id":
+                        "ATTL8fDJKfGzXNH4VVuDy1qW4_Jm8S0sqmnUTeYtWpqxUJLnXIn90V8YIGDg-SNPaB70Hg4mko_fde4-",
+                        components: "buttons",
+                        currency: "USD",
+                        "disable-funding": "credit,card,p24",
+                        }}
+                    >
+                        <ButtonWrapper currency={currency} showSpinner={false} />
+                    </PayPalScriptProvider>
+                ) : (
+                    <button onClick={() => setOpen(true)} className={styles.button}>CHECKOUT NOW!</button>
+                )}
+                
+                
             </div>
         </div>
     </div>

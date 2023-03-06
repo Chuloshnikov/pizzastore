@@ -139,11 +139,11 @@ const Cart = () => {
                 </div>
                 { open ? (
                   <div className={styles.paymentMethods}>
-                    <button className={styles.payButton}>CASH ONDELIVERY</button>
+                    <button className={styles.payButton}>CASH ON DELIVERY</button>
                     <PayPalScriptProvider
                         options={{
                         "client-id":
-                        "test",
+                        "ARFvW4JAaY2ppmXoBikiD-_SPH9Az3xwOxjjpgluI-mg4ZwpfY-ObT8HMVh5Siv_qVPjR4PY30c38HAK",
                         components: "buttons",
                         currency: "USD",
                         "disable-funding": "credit,card,p24",

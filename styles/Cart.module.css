@@ -127,5 +127,12 @@
 }
 
 .payButton {
+    padding: 10px 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    color: rgb(6, 156, 106);
+    font-weight: bold;
+    border-radius: 5px;
 
 }

@@ -119,3 +119,13 @@
         width: 100%;
     }
 }
+
+.paymentMethods {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.payButton {
+
+}

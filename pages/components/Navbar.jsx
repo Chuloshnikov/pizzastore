@@ -31,12 +31,14 @@ const Navbar = () => {
           <li className={styles.listItem}>Contact</li>
         </ul>
       </div>
-      <Link href="/cart" passHref>
+      
         <div className={styles.item}>
-          <Image src="/images/cart.png" alt='logo' width="30" height="30"/>
-          <div className={styles.counter}>{quantity}</div>
+          <Link href="/cart" passHref style={{ display: "flex" }}>
+            <Image src="/images/cart.png" alt='logo' width="30" height="30"/>
+            <div className={styles.counter}>{quantity}</div>
+          </Link>
         </div>
-      </Link>
+      
     </div>
   )
 }

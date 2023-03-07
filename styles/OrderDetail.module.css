@@ -1,0 +1,107 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.51);
+    z-index: 999;
+}
+
+.wrapper {
+    width: 500px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 5px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.title {
+    font-weight: 500;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.label {
+    margin-bottom: 10px;
+}
+
+.input {
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.textarea {
+    resize: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.button {
+    border: 0;
+    background-color: rgb(6, 156, 106);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.closeButton {
+position: relative;
+top: -40px;
+left: 230px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .closeButton {
+        top: -30px;
+        left: 210px;
+        }
+}
+
+@media screen and (max-width: 450px) {
+    .closeButton {
+        top: -20px;
+        left: 200px;
+        }
+}
+
+@media screen and (max-width: 425px) {
+    .closeButton {
+        top: -30px;
+        left: 180px;
+        }
+}
+
+@media screen and (max-width: 405px) {
+    .closeButton {
+        top: -30px;
+        left: 150px;
+        }
+}
+
+
+@media screen and (max-width: 340px) {
+    .closeButton {
+        top: -30px;
+        left: 130px;
+        }
+}

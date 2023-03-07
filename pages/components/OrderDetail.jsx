@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../../styles/OrderDetail.module.css';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-const OrderDetail = ({ total, createOrder, setCash }) => {
+const OrderDetail = ({ total, createOrder, cash, setCash }) => {
 
     const [customer, setCustomer] = useState("");
     const [address, setAddress] = useState("");
@@ -14,7 +14,7 @@ const OrderDetail = ({ total, createOrder, setCash }) => {
   return (
     <div className={styles.container}>
         <div className={styles.wrapper}>
-            <div className={styles.closeButton}><AiOutlineCloseCircle onClick={() => setCash(false)}/></div>
+            <div className={styles.closeButton}><AiOutlineCloseCircle onClick={() => setCash(!cash)}/></div>
             <h1 className={styles.title}>You will pay $12 after delivery</h1>
             <div className={styles.item}>
                 <label className={styles.label}>Name Surname:</label>

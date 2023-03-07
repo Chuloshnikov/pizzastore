@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useDispatch, useSelector } from 'react-redux';
 
 import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import axios from 'axios';
+import { useRouter } from "next/router";
+import reset from '../redux/cartSlice';
 
 const Cart = () => {
     const [open, setOpen] = useState(false);
@@ -14,6 +17,19 @@ const Cart = () => {
     const style = { layout: "vertical" };
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.cart);
+    const router = useRouter();
+    
+
+
+    const createOrder = async (data) => {
+      try {
+        const res = axios.post("http://localhost:3000/api/orders", data);
+        res.status === 201 && router.push('/orders/'+res.data._id);
+        dispatch(reset());
+      } catch (err) {
+        console.log(err)
+      }
+    }
 
   // Custom component to wrap the PayPalButtons and handle currency changes
   const ButtonWrapper = ({ currency, showSpinner }) => {

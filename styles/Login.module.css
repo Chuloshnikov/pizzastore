@@ -1,0 +1,33 @@
+.container {
+    margin-top: 6.7rem;
+    height: calc(100vh -100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.button {
+    height: 40px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: rgb(6, 156, 106);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .error {
+    font-size: 13px;
+    color: red;
+  }

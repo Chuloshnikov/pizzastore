@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../../styles/Admin.module.css';
 import axios from 'axios';
 
+
 const index = ({ orders, products}) => {
 
     const [pizzaList, setPizzaList] = useState(products);
@@ -109,7 +110,17 @@ const index = ({ orders, products}) => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+    const myCookie = ctx.req?.cookie || "";
+
+    if (myCookie.token !== process.env.TOKEN) {
+        return {
+            redirect: {
+              destination: "/admin/login",
+              permanent: false,
+            },
+          };
+    }
     const productRes = await axios.get("http://localhost:3000/api/products");
     const orderRes = await axios.get("http://localhost:3000/api/orders");
    
